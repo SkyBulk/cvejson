@@ -38,7 +38,6 @@ def main():
     for entry in scantree(path_to_cves):
         with open(entry.path, 'r+') as file:
             cve_id, pocs = parse_cve_md(file.read())
-            file.close()
             oj[cve_id] = pocs
             # print("{} {}".format(cve_id, pocs))
 
